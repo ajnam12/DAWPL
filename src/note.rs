@@ -1,4 +1,6 @@
-
+/// Defines the note abstraction, which serves as a basis for producing sounds
+/// from an instrument. Notes are also important for developing and defining
+/// other abstractions such as scales and chords.
 use std::collections::HashMap;
 use std::cmp::Ordering;
 use std::str::FromStr;
@@ -102,6 +104,7 @@ impl Note {
         self.add_half_steps(-1)
     }
 
+    /// Returns the MIDI value associated with this particular note
     pub fn get_midi_value(&self) -> i8 {
         let (_, ref note_to_midi) = *MIDI_MAPS;
         *(note_to_midi.get(&self).unwrap())

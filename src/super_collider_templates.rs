@@ -1,3 +1,6 @@
+/// This file specifies a set of templates for relevant SuperCollider, to which
+/// the DAWPL code will later "compile". We must define them as macros (and not
+/// constant string references) because of the nature of the format! macro.
 macro_rules! k_instruments {
 // Synth from this video: "https://www.youtube.com/watch?v=nB_bVJ1c1Rg"
     () => ("

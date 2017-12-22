@@ -9,9 +9,6 @@ use translate::*;
 
 
 
-
-// add instrument here
-// TODO: add arrangement! {...} macro
 pub struct Arrangement {
     /// All tracks that comprise the arrangement
     tracks: Vec<Track>,

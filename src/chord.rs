@@ -1,3 +1,7 @@
+/// Defines the chord abstraction. Chords provide a foundation for composition
+/// and improvisation. They are often defined relative to scale tones. In the
+/// CHORD_FORMULAS variable, we define chords relative to a sequence of Arabic
+/// number tones of a major scale.
 use note::*;
 use scale::*;
 use std::collections::HashMap;

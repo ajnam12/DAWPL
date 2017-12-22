@@ -1,3 +1,6 @@
+/// Defines the scale abstraction. Scales are sequences of notes defined
+/// relative to a base note and a formula of intervals. Here, we use a formula
+/// of cumulative intervals to make some logic in the code slightly simpler.
 use note::*;
 use std::collections::HashMap;
 

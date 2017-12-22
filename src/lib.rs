@@ -1,3 +1,4 @@
+/// This file defines unit tests for DAWPL's various components
 #[macro_use]
 extern crate lazy_static;
 #[macro_use]
@@ -8,13 +9,11 @@ extern crate enum_derive;
 pub mod super_collider_templates;
 #[macro_use]
 pub mod syntax;
-
 pub mod arrangement;
 pub mod chord;
 pub mod clip;
 pub mod note;
 pub mod scale;
-
 pub mod track;
 pub mod translate;
 

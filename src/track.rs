@@ -1,4 +1,6 @@
-
+/// Defines the track abstraction. Tracks are sequences of clips. Rests can
+/// be represented by inserting Empty clips into the track for the desired
+/// duration.
 use arrangement::*;
 use chord::*;
 use clip::*;

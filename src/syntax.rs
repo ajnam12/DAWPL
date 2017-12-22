@@ -1,5 +1,6 @@
-// This file defines a domain specific language (DSL) for DAWPL through
-// Rust's macro system
+/// This file defines a set of macros to provide easy and convenient access
+/// to DAWPL's abstractions
+
 use arrangement::*;
 use chord::*;
 use clip::*;
@@ -16,6 +17,8 @@ macro_rules! n {
     }}
 }
 
+/// The chord macro can be used to define chords like so:
+/// chord!(C4, Maj7) defines a Cmaj7 chord with C4 as the root
 macro_rules! chord {
     ($note:ident,$chord_type:ident) => {{
         let root = n!($note);
@@ -25,6 +28,9 @@ macro_rules! chord {
     }}
 }
 
+/// Shorthand to express an instrument clip by denoting a name for the clip,
+/// the name of the desired instrument, a list of notes (MIDI), and their
+/// respective durations.
 macro_rules! instr_clip {
     ($clip_name:ident, $instr_name:ident, $notes:expr, $durations:expr) => {{
         Clip::Instrument(String::from(stringify!($clip_name)),
@@ -33,6 +39,8 @@ macro_rules! instr_clip {
     }}
 }
 
+/// Allows user to specify a track by giving it a name and enumerating its
+/// clip names e.g. track!(<track-name>, <clip_0>, ..., <clip_n>)
 macro_rules! track {
     ($name:ident, $( $clip_name:ident),*) => {{
         let mut clip_names: Vec<String> = Vec::new();
@@ -42,7 +50,8 @@ macro_rules! track {
         Track::new(String::from(stringify!($name)), clip_names)
     }}
 }
-// Can element-wise multiply to get different speeds
+/// A macro that maps letters to durations, which can be element-wise multiplied
+/// to align with different tempos (might later work tempo into the macro)
 macro_rules! rhythm {
     ($( $beat:ident),*) => {{
         let mut durations: Vec<f64> = Vec::new();

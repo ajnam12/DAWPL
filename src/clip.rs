@@ -1,7 +1,7 @@
-// This file defines DAWPL clips and the various methods they support for 
-// editing and translation. Clips can also be extended to support effects
-// on the signals they contain.
-// Rest syntax: http://doc.sccode.org/Classes/Rest.html
+/// This file defines DAWPL clips and the various methods they support for 
+/// editing and translation. Clips can also be extended to support effects
+/// on the signals they contain.
+/// Rest syntax: http://doc.sccode.org/Classes/Rest.html
 use chord::*;
 use note::*;
 use scale::*;
