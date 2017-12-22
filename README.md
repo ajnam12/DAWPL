@@ -9,14 +9,20 @@ particular way -- making it more readable and modular.
 
 # The 5-Layer DAWPL Abstraction Hierarchy
 **Arrangement:** a combinatino of tracks, the "big picture" of the composition
+
 **Track:** a time sequenced series of clips
+
 **Clip:** a combination of signals
+
 **Signal:** a description of a sound e.g. a waveform or mp3 file
+
 **Audio:** the physical production of sound
 
 # Music Theory Abstractions
 **Chord:** A combination of notes, often defined relative to a particular scale
+
 **Scale:** A sequence of notes given by an interval-sequence formula
+
 **Note:** A tone of a certain frequency
 
 # SuperCollider
