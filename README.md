@@ -8,7 +8,7 @@ organization (explained later) forces the user to organize their code in a
 particular way -- making it more readable and modular.
 
 # The 5-Layer DAWPL Abstraction Hierarchy
-**Arrangement:** a combinatino of tracks, the "big picture" of the composition
+**Arrangement:** a combination of tracks, the "big picture" of the composition
 
 **Track:** a time sequenced series of clips
 

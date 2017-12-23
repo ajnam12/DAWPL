@@ -25,5 +25,3 @@ impl Clip {
         }
     }
 }
-
-// TODO: add macro, e.g. clip!(instr, notes)
