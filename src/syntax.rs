@@ -74,25 +74,29 @@ macro_rules! rhythm {
 
 // TODO: arrangement macro
 
-// based on the doc-exaple of the vec macro
-// https://doc.rust-lang.org/1.7.0/book/macros.html
-// macro_rules! play { // TODO: add rests, token tree type might be useful?
-//     ($( $notes:tt),*) => {{
-//         let mut midi_values: Vec<Option<Vec<i8>>> = Vec::new();
-//         $( 
-//             match $notes {
-//                 Rest => {midi_values.push(None)},
-//                 _ => {midi_values.push(Some($notes.play()));}
-//             }
-//         )*
-//         midi_values
-//     }}
-// }
+impl Playable for () { // to quiet compiler complaints
+    fn play(&self) -> Vec<i8> {
+        Vec::new()
+    } 
+}
 
+/// The play macro can be used to conveniently define instrumental clips.
+/// An empty pair of parens "()" can be used to denote rests.
+macro_rules! play {
+    ($( $notes:expr),*) => {{
+        let mut midi_values: Vec<Option<Vec<i8>>> = Vec::new();
+        $( 
+            //println!("Notes stringified: {}", stringify!($notes));
+            let elem: Option<Vec<i8>> = match stringify!($notes) {
+                "()" => None,
+                _ => Some($notes.play()),
+            };
+            midi_values.push(elem);
+        )*
+        midi_values
+    }}
 
-// /// This macro is used to conveniently define chords 
-// macro_rules! chord {
+}
 
-// }
 
 // TODO: play! macro: play![a, b, c] => vec![a.play(), b.play(), c.play()]

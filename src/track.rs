@@ -7,7 +7,7 @@ use clip::*;
 use note::*;
 use scale::*;
 
-#[derive(Debug)]
+#[derive(Debug, PartialEq, Eq)]
 pub struct Track {
     name: String,
     clip_names: Vec<String> // Gaps can be represented as empty clips

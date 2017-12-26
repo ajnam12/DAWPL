@@ -73,7 +73,7 @@ mod tests {
         let ii_chord_clip = Clip::Instrument("v1".into(), "sine".into(), 
             vec![Some(ii_chord.play()), Some(ii_chord.play())],
             vec![1.0, 1.0]);
-        let expected_ii = // TODO: is breaking indentation necessary?
+        let expected_ii =
 "
 v1 = Pbind(
     \\instrument, \\sine,
@@ -116,9 +116,13 @@ v1 = Pbind(
         assert_eq!(n!(C4), Note::new(Name::C, 4));
         assert_eq!(chord!(C4, Maj7), Chord::new(Note::new(Name::C, 4),
             ChordType::Maj7));
-        println!("rhythm: {:?}", rhythm![W, Q, W, H]);
+        assert_eq!(rhythm![W, Q, W, H], vec![1.0, 0.25, 1.0, 0.5]);
         println!("track: {:?}", track!(track1, clip1, clip2));
-        //println!("{:?}", play!(n!(C4), chord!(C4, Maj7), Rest));
+        assert_eq!(track!(track1, clip1, clip2), Track::new("track1".into(),
+            vec!["clip1".into(), "clip2".into()]));
+        println!("Play output: {:?}", play!(n!(C4), chord!(C4, Maj7), ()));
+        assert_eq!(play!(n!(C4), chord!(C4, Maj7), ()),
+            vec![Some(vec![60]), Some(vec![60, 64, 67, 71]), None]);
     }
 
     #[test]
