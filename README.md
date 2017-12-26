@@ -28,8 +28,8 @@ particular way -- making it more readable and modular.
 # SuperCollider
 DAWPL translates to SuperCollider, a popular and powerful DSP-oriented language
 for algorithmic music composition. DAWPL is intended as a bridge between the
-power of SuperCollider and the syntactic power of Rust, as well as the macros,
-music theory, and DAW abstractions that DAWPL provides.
+audio/DSP power of SuperCollider and the syntactic power of Rust, its macro
+system, and DAWPL's music theory and organiational abstractions.
 
 # Possible Use Cases
 DAWPL can be used to let artists "prototype" tunes and productions. Artists can
