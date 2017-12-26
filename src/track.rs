@@ -1,6 +1,11 @@
 /// Defines the track abstraction. Tracks are sequences of clips. Rests can
 /// be represented by inserting Empty clips into the track for the desired
 /// duration.
+/// Note that in their current state, Tracks are defined in terms of symbolic
+/// relationships to clips i.e. they deal only with the names of clips, rather
+/// than references to actual clip objects. In the future, clip_names might
+/// later be changed to contain shared references to Clip structs OR there might
+/// be another syntax-check to ensure that all the clip names used exist.
 use arrangement::*;
 use chord::*;
 use clip::*;

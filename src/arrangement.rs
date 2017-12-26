@@ -1,4 +1,9 @@
-// This file defines the arrangement interface.
+/// This file defines the arrangement interface. An arrangement is determined by
+/// a vector of tracks (which are all currently mixed together) as well as a 
+/// vector of clips whose names correspond to the symbolic names used within the
+/// tracks. Future improvements may include allowing for individual volume
+/// control (e.g. via a multiplier or limit of some sort) across different
+/// tracks.
 use chord::*;
 use clip::*;
 use note::*;
